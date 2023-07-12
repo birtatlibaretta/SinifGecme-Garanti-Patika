@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Mezuniyet {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int matematikNot, fizikNot, türkçeNot, kimyaNot, müzikNot;
+        int toplamNot = 0;
+        int geçerNot = 0;
+
+        System.out.println("Derslerinize ait Notlarınızı Giriniz: ");
+        matematikNot = sc.nextInt();
+        fizikNot = sc.nextInt();
+        türkçeNot = sc.nextInt();
+        kimyaNot = sc.nextInt();
+        müzikNot = sc.nextInt();
+
+        for (int notlar : new int[]{matematikNot, fizikNot, türkçeNot, kimyaNot, müzikNot}) {
+            if (notlar >= 0 && notlar <= 100) {
+                toplamNot += notlar;
+                geçerNot++;
+            }
+        }
+
+        double ortalama = toplamNot / geçerNot;
+
+        if (ortalama >= 55) {
+            System.out.println("Geçti");
+        } else {
+            System.out.println("Kaldı");
+        }
+    }
+}
